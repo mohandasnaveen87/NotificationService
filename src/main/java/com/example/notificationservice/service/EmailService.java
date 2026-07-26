@@ -29,7 +29,7 @@ public class EmailService {
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-
+        props.put("mail.smtp.ssl.trust", mailHost);
         // Build the email message
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(request.getSenderEmail());
